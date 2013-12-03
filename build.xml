@@ -75,14 +75,16 @@
   <!-- Module dossier -->
   
   <dirname property="module.dossier.basedir" file="${ant.file}"/>
-  
-  
-  
+
+
   <property name="compiler.args.dossier" value="${compiler.args}"/>
   
   <property name="dossier.output.dir" value="${module.dossier.basedir}/out/production/dossier"/>
   <property name="dossier.testoutput.dir" value="${module.dossier.basedir}/out/test/dossier"/>
-  
+
+  <property name="dossier.doc.dir" value="${module.dossier.basedir}/doc"/>
+
+
   <path id="dossier.module.bootclasspath">
     <!-- Paths to be included in compilation bootclasspath -->
   </path>
@@ -148,6 +150,7 @@
   <target name="clean.module.dossier" description="cleanup module">
     <delete dir="${dossier.output.dir}"/>
     <delete dir="${dossier.testoutput.dir}"/>
+    <delete dir="${dossier.doc.dir}"/>
   </target>
   
   <target name="init" description="Build initialization">
@@ -156,13 +159,15 @@
 
   <!-- Generate javadocs for current project into ${doc.dir} -->
   <target name="doc" depends="init" description="generate documentation">
-      <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+      <javadoc sourcepath="${module.dossier.basedir}/java" destdir="${dossier.doc.dir}" package="on">
+          <classpath refid="dossier.module.production.classpath"/>
+      </javadoc>
   </target>
 
 
   <target name="clean" depends="clean.module.dossier" description="cleanup all"/>
   
-  <target name="build.modules" depends="init, clean, compile.module.dossier" description="build all modules"/>
+  <target name="build.modules" depends="init, clean, compile.module.dossier, doc" description="build all modules"/>
 
 
   <target name="all" depends="build.modules" description="build all"/>
