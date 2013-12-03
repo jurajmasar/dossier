@@ -169,6 +169,48 @@
   
   <target name="build.modules" depends="init, clean, compile.module.dossier, doc" description="build all modules"/>
 
+    <target name="init.artifacts">
+        <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+        <property name="artifact.output.dossier:jar" value="${basedir}/out/artifacts/dossier_jar"/>
+        <mkdir dir="${artifacts.temp.dir}"/>
+        <property name="temp.jar.path.dossier.jar" value="${artifacts.temp.dir}/dossier.jar"/>
+    </target>
 
-  <target name="all" depends="build.modules" description="build all"/>
+    <target name="clean.artifact.dossier:jar" description="clean dossier:jar artifact output">
+        <delete dir="${artifact.output.dossier:jar}"/>
+    </target>
+
+    <target name="artifact.dossier:jar" depends="init.artifacts, compile.module.dossier" description="Build &#39;dossier:jar&#39; artifact">
+        <mkdir dir="${artifact.output.dossier:jar}"/>
+        <jar destfile="${temp.jar.path.dossier.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+            <zipfileset dir="${dossier.output.dir}"/>
+        </jar>
+        <copy file="${temp.jar.path.dossier.jar}" tofile="${artifact.output.dossier:jar}/dossier.jar"/>
+        <copy file="${basedir}/libs/jfreechart-1.0.13.jar" tofile="${artifact.output.dossier:jar}/jfreechart-1.0.13.jar"/>
+        <copy file="${basedir}/libs/junit.jar" tofile="${artifact.output.dossier:jar}/junit.jar"/>
+        <copy file="${basedir}/libs/commons-codec-1.4.jar" tofile="${artifact.output.dossier:jar}/commons-codec-1.4.jar"/>
+        <copy file="${basedir}/libs/jcommon-1.0.16.jar" tofile="${artifact.output.dossier:jar}/jcommon-1.0.16.jar"/>
+        <copy file="${basedir}/libs/jfreechart-1.0.13-experimental.jar" tofile="${artifact.output.dossier:jar}/jfreechart-1.0.13-experimental.jar"/>
+        <copy file="${basedir}/libs/jfreechart-1.0.13-swt.jar" tofile="${artifact.output.dossier:jar}/jfreechart-1.0.13-swt.jar"/>
+        <copy file="${basedir}/libs/servlet.jar" tofile="${artifact.output.dossier:jar}/servlet.jar"/>
+        <copy file="${basedir}/libs/swtgraphics2d.jar" tofile="${artifact.output.dossier:jar}/swtgraphics2d.jar"/>
+        <copy file="${basedir}/libs/gnujaxp.jar" tofile="${artifact.output.dossier:jar}/gnujaxp.jar"/>
+        <copy file="${basedir}/libs/iText-2.1.5.jar" tofile="${artifact.output.dossier:jar}/iText-2.1.5.jar"/>
+        <mkdir dir="${artifact.output.dossier:jar}/resources"/>
+        <copy todir="${artifact.output.dossier:jar}/resources">
+            <fileset dir="${basedir}/resources"/>
+        </copy>
+        <mkdir dir="${artifact.output.dossier:jar}/data"/>
+        <copy todir="${artifact.output.dossier:jar}/data">
+            <fileset dir="${basedir}/data"/>
+        </copy>
+    </target>
+
+    <target name="build.all.artifacts" depends="artifact.dossier:jar" description="Build all artifacts">
+
+        <!-- Delete temporary files -->
+        <delete dir="${artifacts.temp.dir}"/>
+    </target>
+
+    <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>
