@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="dossier:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/dossier_jar</output-path>
+    <root id="root">
+      <element id="archive" name="dossier.jar">
+        <element id="module-output" name="dossier" />
+      </element>
+      <element id="library" level="project" name="libs" />
+      <element id="directory" name="resources">
+        <element id="dir-copy" path="$PROJECT_DIR$/resources" />
+      </element>
+      <element id="directory" name="data">
+        <element id="dir-copy" path="$PROJECT_DIR$/data" />
+      </element>
+    </root>
+  </artifact>
+</component>
