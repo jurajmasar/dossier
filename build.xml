@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="dossier" default="all">
+  
+  
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <property name="skip.tests" value="true"/>
+
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="off"/>
+  <property name="compiler.generate.no.warnings" value="on"/>
+  <property name="compiler.args" value="-Xlint:unchecked"/>
+  <property name="compiler.max.memory" value="128m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.apk"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.libs.classpath">
+    <pathelement location="${basedir}/libs/commons-codec-1.4.jar"/>
+    <pathelement location="${basedir}/libs/gnujaxp.jar"/>
+    <pathelement location="${basedir}/libs/iText-2.1.5.jar"/>
+    <pathelement location="${basedir}/libs/jcommon-1.0.16.jar"/>
+    <pathelement location="${basedir}/libs/jfreechart-1.0.13-experimental.jar"/>
+    <pathelement location="${basedir}/libs/jfreechart-1.0.13-swt.jar"/>
+    <pathelement location="${basedir}/libs/jfreechart-1.0.13.jar"/>
+    <pathelement location="${basedir}/libs/junit.jar"/>
+    <pathelement location="${basedir}/libs/servlet.jar"/>
+    <pathelement location="${basedir}/libs/swtgraphics2d.jar"/>
+  </path>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module dossier -->
+  
+  <dirname property="module.dossier.basedir" file="${ant.file}"/>
+  
+  
+  
+  <property name="compiler.args.dossier" value="${compiler.args}"/>
+  
+  <property name="dossier.output.dir" value="${module.dossier.basedir}/out/production/dossier"/>
+  <property name="dossier.testoutput.dir" value="${module.dossier.basedir}/out/test/dossier"/>
+  
+  <path id="dossier.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="dossier.module.production.classpath">
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="dossier.runtime.production.module.classpath">
+    <pathelement location="${dossier.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="dossier.module.classpath">
+    <pathelement location="${dossier.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  <path id="dossier.runtime.module.classpath">
+    <pathelement location="${dossier.testoutput.dir}"/>
+    <pathelement location="${dossier.output.dir}"/>
+    <path refid="library.libs.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.dossier">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.dossier">
+    <patternset refid="excluded.from.module.dossier"/>
+  </patternset>
+  
+  <path id="dossier.module.sourcepath">
+    <dirset dir="${module.dossier.basedir}">
+      <include name="java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.dossier" depends="compile.module.dossier.production,compile.module.dossier.tests" description="Compile module dossier"/>
+  
+  <target name="compile.module.dossier.production" description="Compile module dossier; production classes">
+    <mkdir dir="${dossier.output.dir}"/>
+    <javac destdir="${dossier.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" includeantruntime="false">
+      <compilerarg line="${compiler.args.dossier}"/>
+      <bootclasspath refid="dossier.module.bootclasspath"/>
+      <classpath refid="dossier.module.production.classpath"/>
+      <src refid="dossier.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.dossier"/>
+    </javac>
+    
+    <copy todir="${dossier.output.dir}">
+      <fileset dir="${module.dossier.basedir}/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.dossier.tests" depends="compile.module.dossier.production" description="compile module dossier; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.dossier" description="cleanup module">
+    <delete dir="${dossier.output.dir}"/>
+    <delete dir="${dossier.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+
+  <!-- Generate javadocs for current project into ${doc.dir} -->
+  <target name="doc" depends="init" description="generate documentation">
+      <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+  </target>
+
+
+  <target name="clean" depends="clean.module.dossier" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.dossier" description="build all modules"/>
+
+
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
