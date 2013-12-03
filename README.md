@@ -3,26 +3,26 @@ Multilevel Marketing Manager
 
 > Disclaimer: This is a high school project created for my CS class at International Baccalaureate Diploma programme. It is not maintained anymore and contains many anti-patterns. Use it at your own risk.
 
-Multilevel Marketing Manager is an application for managing human resources at a multilevel marketing organization "Network World Alliance". It calculates earnings of one's employees based on amount of points they gained in the system in a given time period and displays various graphs and trends based on this data.
+Multilevel Marketing Manager is an application for managing human resources at a multilevel marketing organization called "Network World Alliance". It calculates earnings of one's employees based on amount of points they gained in the system in a given time period and displays various graphs and trends based on this data.
 
 This project has been created on 22 February 2011 at IB Diploma at Gymnazium Jura Hronca, Bratislava, Slovakia.
 
-It has been initially developed using BlueJ 3.0.4, and reorganized using IntelliJ IDEA 13 CE.
+It has been initially developed using BlueJ 3.0.4, and later reorganized using IntelliJ IDEA 13 CE.
 
 Directory structure
 -------------------
 
     README.md - this readme file
     build.xml - ANT build file that compiles and bundles this project into jars, as well as generates javadoc
-    data - user data storage
-    doc - javadoc documentation
+    data/ - user data storage
+    doc/ - javadoc documentation
     dossier.iml - IntelliJ IDEA project file
     dossier_documentation.pdf - project documentation based on the criteria for Dossier at IB Diploma
-    dossier_log - blog about the development (in Slovak)
-    java - source files
-    libs - dependencies
-    out - bundled jars
-    resources - resources required by the application (images/...)
+    dossier_log/ - blog about the development (in Slovak)
+    java/ - source files
+    libs/ - dependencies
+    out/ - bundled jars
+    resources/ - resources required by the application (images/...)
 
 Usage instructions
 ------------------
