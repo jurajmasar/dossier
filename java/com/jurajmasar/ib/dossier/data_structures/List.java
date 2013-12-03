@@ -79,7 +79,7 @@ public class List
      * Adds given item to the list according to information 
      * whether the list is sorted or not.
      * 
-     * @param item item to add
+     * @param newItem item to add
      */        
     public void add(Item newItem)
     {
@@ -123,7 +123,7 @@ public class List
     /**
      * Finds and returns Item according to given key.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return pointer to found item
      */        
     public Item find(String k)
@@ -140,7 +140,7 @@ public class List
     /**
      * Finds and returns position according to given key.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return position of the record
      */        
     public long findPosition(String k)
@@ -154,7 +154,7 @@ public class List
     /**
      * Finds and returns vector of positions according to given key.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return vector of positions of the records
      */        
     public Vector<Integer> findPositions(String k)
@@ -171,7 +171,7 @@ public class List
      * Finds and returns vector of positions according to given key.
      * The key could be only substring of elements' keys.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return vector of positions of the records
      */        
     public Vector<Integer> findPositionsSubstring(String k)
@@ -188,7 +188,7 @@ public class List
      * Finds and returns array of Item according to given key.
      * The key could be only substring of elements' keys.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return array of pointers to found Item
      */        
     public Item[] findMoreSubstring(String k)
@@ -214,7 +214,7 @@ public class List
     /**
      * Finds and returns array of Item according to given key.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return array of pointers to found Item
      */        
     public Item[] findMore(String k)
@@ -232,7 +232,7 @@ public class List
     /**
      * Finds and returns Item according to given position.
      * 
-     * @param position position of item to find
+     * @param pos position of item to find
      * @return pointer to found item
      */     
     public Item findByPosition(long pos)
@@ -263,7 +263,7 @@ public class List
     /**
      * Adds given item to the beginning of the list.
      * 
-     * @param item item to add
+     * @param newItem item to add
      */      
     private void addToBeginning(Item newItem)
     {
@@ -280,7 +280,7 @@ public class List
     /**
      * Adds given item to the list on the right place assuming the list is sorted.
      * 
-     * @param item item to add
+     * @param newItem item to add
      */ 
     private void addSorted(Item newItem)
     {
@@ -317,7 +317,7 @@ public class List
      * Finds and returns Item according to given key
      * assuming the list is sorted.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return pointer to found item
      */            
     private Item findSorted(String k)
@@ -348,7 +348,7 @@ public class List
      * Finds and returns array of Item according to given key
      * assuming the list is sorted.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return array of pointers to found Item
      */            
     private Item[] findSortedMore(String k)
@@ -385,7 +385,7 @@ public class List
      * Finds and returns array of Item according to given key
      * assuming the list is unsorted.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return array of pointers to found Item
      */            
     private Item[] findUnsortedMore(String k)
@@ -411,7 +411,7 @@ public class List
      * Finds and returns Item according to given key
      * assuming the list is unsorted.
      * 
-     * @param key key to find
+     * @param k key to find
      * @return pointer to found item
      */     
     private Item findUnsorted(String k)

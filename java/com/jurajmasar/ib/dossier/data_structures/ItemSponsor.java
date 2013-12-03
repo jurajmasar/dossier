@@ -21,7 +21,7 @@ public class ItemSponsor extends Item
      * Constructor - initializes object variables to given values
      *
      * @param key key of item
-     * @param position  position in file
+     * @param pos position in file
      * @param next position to next Item
      * @param regNum    registration number
      * @param registrationDate  registrationDate

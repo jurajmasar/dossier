@@ -18,7 +18,7 @@ public class TextFileReader
      * constructor for objects of class TextFileReader.
      * initializes the access to the file or throws an exception.
      * 
-     * @params fileName name of the file to read
+     * @param fileName name of the file to read
      */
     public TextFileReader(String fileName)
     {

@@ -22,7 +22,7 @@ public class MonthManager
     /**
      * Constructor - creates the pointer to file and initialize list
      *
-     * @param  regNum   registration number of distributor 
+     * @param  d   registration number of distributor
      */
     public MonthManager(Distributor d)
     {

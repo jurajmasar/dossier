@@ -222,8 +222,7 @@ public class MainWindow extends JFrame implements ActionListener
      * Defines action when ActionEvent on controls 
      * at this frame fires
      *
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y
+     * @param  e   a sample parameter for a method
      */
     public void actionPerformed(ActionEvent e)
     {

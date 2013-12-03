@@ -69,7 +69,7 @@ public class VectorItem<O>
      * Sets the object encapsulated in VectorItem 
      * to given object.
      *
-     * @param p position
+     * @param o position
      */    
     public void setObject(O o)
     {
@@ -89,7 +89,7 @@ public class VectorItem<O>
     /**
      * Sets pointer to previous Item in Vector.
      *
-     * @param next Item
+     * @param previous Item
      */     
     public void setPrevious(VectorItem<O> previous)
     {

@@ -106,7 +106,7 @@ public class Item implements Cloneable
     /**
      * Sets pointer to next Item in List.
      *
-     * @param next Item
+     * @param n Item
      */     
     public void setNext(Item n)
     {

@@ -315,7 +315,7 @@ public class DistributorManager
     /**
      * Returns array of Distributors from records from given positions.
      *
-     * @param  v   vector of positions (long)
+     * @param  positions   vector of positions (long)
      * @return     array of distributors
      */
     public static Distributor[] getDistributorsFromPositions(int[] positions)
@@ -352,8 +352,8 @@ public class DistributorManager
      * Find distributors according to given parameters in String.
      *
      * @param  regNum   registration number in string
-     * @param   firstName   first name of distributor
-     * @param   lastName    last name of distributor
+     * @param   name   first name of distributor
+     * @param   surname    last name of distributor
      * @return     array of distributors
      */
     public static Distributor[] find(String regNum, String name, String surname)
@@ -487,7 +487,6 @@ public class DistributorManager
      * according to given information.
      *
      * @param  d    distributor object with new information
-     * @param  regNum registration number
      * @return     true if editing was successful
      */
     public static boolean editDistributor(Distributor d)
@@ -563,7 +562,6 @@ public class DistributorManager
      * and trigger to repopulate lists.
      * 
      * @param  regNum   registration number
-     * @param  repopulate boolean
      * @return     true if successful
      */
     public static boolean deleteDistributor(String regNum)

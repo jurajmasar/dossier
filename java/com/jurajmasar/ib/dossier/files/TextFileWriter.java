@@ -47,7 +47,6 @@ public class TextFileWriter
      * writes text into the current position of sequential file
      *
      * @param  line text to be written
-     * @return     void
      */
     public void write(String line)
     {

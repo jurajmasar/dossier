@@ -319,7 +319,7 @@ public class Vector<O>
      * Inserts object given to the position given in Vector.
      *
      * @param  index    index where to insert
-     * @param  O        object to insert
+     * @param  o        object to insert
      * @return     true if successful
      */
     public boolean insertAt(int index, O o)
@@ -374,7 +374,7 @@ public class Vector<O>
      * Returns object which is situated in the Vector just
      * before the object given or null
      *
-     * @param  O    object to find
+     * @param  a    object to find
      * @return     object before the object given
      */
     public O before(O a)
@@ -389,7 +389,7 @@ public class Vector<O>
      * Returns object which is situated in the Vector just
      * after the object given or null
      *
-     * @param  O    object to find
+     * @param  a    object to find
      * @return     object before the object given
      */
     public O after(O a)

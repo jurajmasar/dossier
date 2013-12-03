@@ -38,7 +38,7 @@ class TreeLabel extends JLabel
      * Sets the background color to Color given
      * in parameters.
      * 
-     * @param Color Color object
+     * @param color Color object
      */
     public void setBackground(Color color) 
     {

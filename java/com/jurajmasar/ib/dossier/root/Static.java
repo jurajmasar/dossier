@@ -49,7 +49,7 @@ public class Static
     /**
      * customizes the length of the string given
      *
-     * @param  y   a sample parameter for a method
+     * @param  s   a sample parameter for a method
      * @return     string customized to the given length
      */
     public static String setStringLength(String s, int numOfChars)
@@ -118,7 +118,7 @@ public class Static
     /**
      * removes given char from a given string
      *
-     * @param  s string to remove char from
+     * @param  orig string to remove char from
      * @param c char to remove
      * @return     string without given char
      */
@@ -229,8 +229,8 @@ public class Static
      * Creates an array of strings from compilation of strings with default separator.
      *
      * @param  arr array of values
-     * @param left left indx
-     * @param right right index
+     * @param i left index
+     * @param j right index
      * @return     integer index
      */    
     private static int quickSortPartition(int arr[], int i, int j)
@@ -434,7 +434,7 @@ public class Static
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y   a sample parameter for a method
+     * @param  s   a sample parameter for a method
      * @return     the sum of x and y
      */
     public static boolean validateLetters(String s)
@@ -472,7 +472,7 @@ public class Static
     /**
      * Returns a word representing Month given in number.
      *
-     * @param  String   month in number
+     * @param  in   month in number
      * @return     String month in world
      */
     public static String monthByWord(String in)
@@ -496,7 +496,6 @@ public class Static
      * Encrypts given String according to given key.
      *
      * @param  in   String to encrypt
-     * @param  key  key of the encryption
      * @return      encrypted String
      */
     public static String encrypt(String in)
