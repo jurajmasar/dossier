@@ -111,7 +111,11 @@ public class Main
 
                 if (Password.checkPassword(password))
                 {
-                    Dialog.mainWindow = new MainWindow();
+                    javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                        public void run() {
+                            Dialog.mainWindow = new MainWindow();
+                        }
+                    });
                 }
                 else
                 {
