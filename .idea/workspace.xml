@@ -64,14 +64,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/java/com/jurajmasar/ib/dossier/root/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="0" selection-start="4558" selection-end="4558" vertical-scroll-proportion="0.36301368" vertical-offset="1460" max-vertical-offset="2370">
+            <state line="126" column="0" selection-start="4558" selection-end="4558" vertical-scroll-proportion="0.0" vertical-offset="1460" max-vertical-offset="2370">
               <folding>
                 <element signature="e#4168#4342#0" expanded="true" />
                 <element signature="e#4319#4320#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="0" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.43514645" vertical-offset="243" max-vertical-offset="960">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -836,11 +845,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/java/com/jurajmasar/ib/dossier/root/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="0" selection-start="4558" selection-end="4558" vertical-scroll-proportion="0.36301368" vertical-offset="1460" max-vertical-offset="2370">
+        <state line="126" column="0" selection-start="4558" selection-end="4558" vertical-scroll-proportion="0.0" vertical-offset="1460" max-vertical-offset="2370">
           <folding>
             <element signature="e#4168#4342#0" expanded="true" />
             <element signature="e#4319#4320#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.43514645" vertical-offset="243" max-vertical-offset="960">
+          <folding />
         </state>
       </provider>
     </entry>
