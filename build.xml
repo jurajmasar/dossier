@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="dossier" default="all">
+<project name="dossier" default="run">
   
   
   <!-- Uncomment the following property if no tests compilation is needed -->
@@ -213,4 +213,8 @@
     </target>
 
     <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+
+    <target name="run" depends="all">
+        <java jar="${artifact.output.dossier:jar}/dossier.jar" fork="true"/>
+    </target>
 </project>

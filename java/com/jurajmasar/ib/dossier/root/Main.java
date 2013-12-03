@@ -23,7 +23,7 @@ import java.io.*;
 public class Main
 {
     /**
-     * Boostrapper of the application.
+     * Entry point of the application.
      * Loads the rest of the application.
      */
     public static void main(String[] args)
