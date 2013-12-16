@@ -7,11 +7,14 @@ import com.jurajmasar.ib.dossier.logic.Password;
 import com.jurajmasar.ib.dossier.windows_and_dialogs.MainWindow;
 import com.jurajmasar.ib.dossier.windows_and_dialogs.custom_gui_controls.CustomPasswordField;
 
-import  javax.swing.JOptionPane;
-import  javax.swing.JPasswordField;
-import javax.swing.UIManager;
+import javax.swing.*;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.FontUIResource;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import java.awt.*;
 import java.io.*;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 /**
  * Main class of the program - it controls all other classes
@@ -28,10 +31,20 @@ public class Main
      */
     public static void main(String[] args)
     {
-        //set the windows look 
+        //set a cross platform look and feel
         try 
         {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            UIManager.setLookAndFeel(new NimbusLookAndFeel() {
+
+                @Override
+                public UIDefaults getDefaults() {
+                    UIDefaults ret = super.getDefaults();
+                    ret.put("defaultFont",
+                            new Font(Font.SANS_SERIF, Font.PLAIN, 9));
+                    return ret;
+                }
+
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }        
